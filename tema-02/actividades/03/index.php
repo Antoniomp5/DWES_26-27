@@ -1,4 +1,16 @@
 <?php
+
+/*
+    Actividad 2.1.1
+    Descripción: uso de las variables
+    - Un título
+    - un párrafo
+    - un enlace
+
+    Alumno: Antonio Hernández Gilabert
+    Fecha: 30/09/2026
+*/
+
 // Ejercicio3
 $textoUno = "Este es el resultado de ";
 $textoDos = "concatenar dos variables string en PHP.";

@@ -1,23 +1,27 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Hola mundo PHP</title>
-    </head>
-    <body>
-        <h1>Primer hola mundo en PHP<br /></h1>
+<?php
+/*
+    Actividad 2.1.1
+    Descripción: uso de las variables
+    - Un título
+    - un párrafo
+    - un enlace
 
-        <?php
-        // Ejercicio1
-            echo "<p>Este es un párrafo diseñado para, </p>";
-            echo "<p><br></p>";
-            echo "<p>ser de tres lineas e idicar, </p>";
-            echo "<p><br></p>";
-            echo "<p>un enlace al periodico El Pais. </p>";
-            echo "<p><br></p>";
-            print "<a href= 'https://elpais.com'>El Pais</a>";
-        ?>
+    Alumno: Antonio Hernández Gilabert
+    Fecha: 30/09/2026
+*/
 
-    </body>
-</html>
+// Modelo
+// Include 'model.index.php'
+
+// Negocioado de la aplicación en php
+
+$titulo = "Mi primer titulo en PHP";
+
+$parrafo = "Mi primer parrafo escrito en PHP, en enlace de abajo te llevará a la web de El País <br>
+sumado a que este úlitmo tendrá de forma obligatoria 3 parrafos así que <br>
+ese es el último parrafo";
+
+$enlace = "http://www.elpais.es";
+// Vista de la aplicación en html
+
+include 'view.index.php';
