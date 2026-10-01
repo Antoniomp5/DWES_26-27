@@ -29,8 +29,7 @@
                 <h1><?= $titulo; ?><br /></h1>
                 <p><?= $parrafo; ?><br /></p>
                 <a href="<?= $enlace; ?>">El País<br /></a>
-                <img href="<?= $imagen; ?>"></img>
-
+                <img src="<?= $imagen; ?>" alt="Imagen de El País" class="img-fluid" width="400">
             </div>
 
         </main>
