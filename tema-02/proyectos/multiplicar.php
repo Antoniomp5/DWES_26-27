@@ -19,9 +19,10 @@
 $valor1 = $_POST['valor1'] ?? 0;
 $valor2 = $_POST['valor2'] ?? 0;
 
-//Realizar la opración de suma
-$operacion = $_POST['operacion'] ?? 'suma';
-$resultado = $valor1 + $valor2;
+//Realizar la opración de multiplicación
+$operacion = $_POST['operacion'] ?? 'multiplicación';
+$resultado = $valor1 * $valor2;
 
-//vista
+//vistas
 include'01-calculadora/views/resultado.view.php';
+

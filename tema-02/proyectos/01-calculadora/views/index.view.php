@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Calculadora-básica</title>
@@ -10,8 +11,9 @@
 
     <!-- icons bootstrap 1.13.1 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- capa principal de la aplicación -->
     <div class="container mt-3">
 
@@ -20,51 +22,49 @@
             <i class="bi bi-calculator"></i>
             <span class="fs-6">Proyecto 2.0.1 - Calculadora básica</span>
         </header>
-    
+
         <!-- contenido principal de la aplicación -->
         <main>
-            <div class="content">
-                <!-- Formulario de la calculadora -->
-                <form method= "post">
-                    <div class="row mb-3">
-                        <label for="valor1" class="form-label">Valor 1:</label>
-                        <input type="number" class="form-control" id="valor1" name="valor1" placeholder="0.00" 
-                        step="0.01" required>
-                    </div>
-                    <div class="row mb-3">
-                        <label for="valor2" class="form-label">Valor 2:</label>
-                        <input type="number" class="form-control" id="valor2" name="valor2" placeholder="0.00" 
-                        step="0.01" required>
-                    </div>
+            <form method="post">
+                <div class="row mb-3">
+                    <label for="valor1" class="form-label">Valor 1:</label>
+                    <input type="number" class="form-control" step="0.01" placeholder="0.00" id="valor1" name="valor1" required>
+                </div>
 
-                    <!-- Botones de acción -->
-                    <div class="btn-group" role="group">
-                        <button type="reset" class="btn btn-danger">Borrar</button>
-                        <button type="submit" class="btn btn-warning" name="operacion" value="sumar" formaction="sumar.php">Sumar</button>
-                        <button type="submit" class="btn btn-warning" name="operacion" value="restar" formaction="restar.php">Restar</button>
-                        <button type="submit" class="btn btn-warning" name="operacion" value="multiplicar" formaction="multiplicar.php">Multiplicar</button>
-                        <button type="submit" class="btn btn-warning" name="operacion" value="dividir" formaction="dividir.php">Dividir</button>
-                        <button type="submit" class="btn btn-warning" name="operacion" value="potencia" formaction="potencia.php">Potencia</button>
-                    </div>
+                <div class="row mb-3">
+                    <label for="valor2" class="form-label">Valor 2:</label>
+                    <input type="number" class="form-control" step="0.01" placeholder="0.00" id="valor2" name="valor2" required>
+                </div>
 
-                </form>
+                <!-- Botones de acción -->
+                <div class="btn-group" role="group">
+                    <button type="reset" class="btn btn-danger">Borrar</button>
+                    <button type="submit" class="btn btn-warning" name="operacion" value="sumar" formaction="sumar.php">Sumar</button>
+                    <button type="submit" class="btn btn-warning" name="operacion" value="restar" formaction="restar.php">Restar</button>
+                    <button type="submit" class="btn btn-warning" name="operacion" value="multiplicar" formaction="multiplicar.php">Multiplicar</button>
+                    <button type="submit" class="btn btn-warning" name="operacion" value="dividir" formaction="dividir.php">Dividir</button>
+                    <button type="submit" class="btn btn-warning" name="operacion" value="potencia" formaction="potencia.php">Potencia</button>
+                </div>
+            </form>
 
-            </div>
 
-        </main>
-        
-        <!-- pie de página de la aplicación -->
-        <footer class="footer mt-auto py-3 fixed-bottom bg-light">
-            <div class="container">
-                <span class="text-muted">&copy; 2026
-                    Antonio Hernández Gilabert - DWES - 2º DAW - Curso 26/27
-                </span>
-            </div>
-        </footer>
-
-        <!-- js bootstrap básico 5.3.8 -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    
     </div>
-  </body>
+
+    </main>
+
+    <!-- pie de página de la aplicación -->
+    <footer class="footer mt-auto py-3 fixed-bottom bg-light">
+        <div class="container">
+            <span class="text-muted">&copy; 2026
+                Antonio Hernández Gilabert - DWES - 2º DAW - Curso 26/27
+            </span>
+        </div>
+    </footer>
+
+    <!-- js bootstrap básico 5.3.8 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    </div>
+</body>
+
 </html>

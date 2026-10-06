@@ -14,5 +14,14 @@
 
 //Modelo
 
+//Negociado
+//Recoger los valores del formulario
+$valor1 = $_POST['valor1'] ?? 0;
+$valor2 = $_POST['valor2'] ?? 0;
+
+//Realizar la opración de potencia
+$operacion = $_POST['operacion'] ?? 'potencia';
+$resultado = pow($valor1, $valor2);
+
 //vista
-include'01-calculadora/views/index.view.php';
+include'01-calculadora/views/resultado.view.php';
