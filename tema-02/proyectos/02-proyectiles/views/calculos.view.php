@@ -26,11 +26,10 @@
         <!-- contenido principal de la aplicación -->
         <main>
             <!-- Formulario de la calculadora -->
-            <table class ="table">
+            <table  class ="table">
                 <thead>
                     <tr>
-                        <th colspan="2" class="text-left">Valores iniciales</th>
-                        <th>Valor</th>
+                        <th colspan="2" class="text-left">Valores iniciales:</th>
                     </tr>
                 </thead>
 
@@ -38,9 +37,7 @@
                     <!-- Velocidad inicial -->
                     <tr>
                         <td colspan="2">
-                            <small class="form-text text-muted">
-                                Velocidad inicial del proyectil en m/s.
-                            </small>
+                            Velocidad inicial:
                         </td>
                         <td>
                             <?= $velocidad_inicial ?> m/s
@@ -50,15 +47,18 @@
                     <!-- Ángulo de lanzamiento -->
                     <tr>
                         <td colspan="2">
-                            <small class="form-text text-muted">
-                                Ángulo de lanzamiento en grados.
-                            </small>
+                            Ángulo Inicial:
                         </td>
                         <td>
                             <?= $angulo_lanzamiento ?>°
                         </td>
                     </tr>
 
+                <thead>
+                    <tr>
+                        <th colspan="2" class="text-left">Resultados:</th>
+                    </tr>
+                </thead>
                     <!-- Resultados -->
                     <tr>
                         <td colspan="2">Ángulo en radianes:</td>
@@ -68,28 +68,35 @@
                     </tr>
 
                     <tr>
-                        <td colspan="2">Velocidad horizontal (Vx):</td>
+                        <td colspan="2">Velocidad Inicial X:</td>
                         <td>
                             <?= $vx ?> m/s
                         </td>
                     </tr>
 
                     <tr>
-                        <td colspan="2">Velocidad vertical (Vy):</td>
+                        <td colspan="2">Velocidad Inicial Y:</td>
                         <td>
                             <?= $vy ?> m/s
                         </td>
                     </tr>
 
                     <tr>
-                        <td colspan="2">Tiempo de vuelo:</td>
+                        <td colspan="2">Alcance Máximo del Proyectil:</td>
+                        <td>
+                            <?= $distancia_horizontal ?> m
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">Tiempo de Vuelo del Proyectil:</td>
                         <td>
                             <?= $tiempo_de_vuelo ?> s
                         </td>
                     </tr>
 
                     <tr>
-                        <td colspan="2">Altura máxima:</td>
+                        <td colspan="2">Altura Máxima del Proyectil:</td>
                         <td>
                             <?= $max_altura ?> m
                         </td>
