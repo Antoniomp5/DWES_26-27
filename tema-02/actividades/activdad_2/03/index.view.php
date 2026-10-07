@@ -18,21 +18,36 @@
         <!-- cabecera de la aplicación -->
         <header class="bg-primary text-white p-3 mb-3">
             <i class="bi bi-stack"></i>
-            <span class="fs-6">Actividad 2.2 - Ej 1: Conversiones</span>
+            <span class="fs-6">Actividad 2.2 - Ej 3: isset()</span>
         </header>
     
         <!-- contenido principal de la aplicación -->
         <main>
             <div class="content">
                 <?php
-                    echo "<h2>Resultados de los cálculos</h2>";
-                    echo "<p>Multiplicación de un entero por una cadena = " . (5 * "3") . "</p>";
-                    echo "<p>Suma de un entero con una cadena = " . (5 + "3") . "</p>";
-                    echo "<p>Suma de un entero con un float = " . (5 + 3.14) . "</p>";
-                    echo "<p>Concatenar un entero con una cadena = " . (5 . "3") . "</p>";
-                    echo "<p>Sumar un entero con un booleano = " . (5 + false) . "</p>";
-                ?>
+                    echo "<h2>Prueba de isset()</h2>";
+                    $valor1 = null;
+                    $valor2 = null;
+                    $valor3 = $valor1;
 
+                    echo "<h3> Valores true:</h3>";
+                    echo "<p>isset(valor1) = " . (isset($valor1) ? "true" : "false") . "</p>";
+                    echo "<p>isset(valor2) = " . (isset($valor2) ? "true" : "false") . "</p>";
+                    echo "<p>isset(valor3) = " . (isset($valor3) ? "true" : "false") . "</p>";
+
+                    $valor4 = 0;
+                    $valor5 = "";
+                    $valor6 = false;
+
+                    echo "<h3> Valores false:</h3>";
+                    echo "<p>isset(valor4) = " . (isset($valor4) ? "true" : "false") . "</p>";
+                    echo "<p>isset(valor5) = " . (isset($valor5) ? "true" : "false") . "</p>";
+                    echo "<p>isset(valor6) = " . (isset($valor6) ? "true" : "false") . "</p>";
+                    /*
+                        Con isset() se comprueba si una variable booleana está definida y no es igual a null devuelve true, 
+                        en caso contrario devuelve false.
+                    */
+                ?>           
             </div>
 
         </main>
