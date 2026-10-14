@@ -36,7 +36,7 @@
                 </li>
                 <?php if($perfil == 'admin'): ?>
                     <li class="nav-item">
-                        <a class="nav-link" aria-disabled="true">Administración</a>
+                        <a class="nav-link" aria-disabled="page" href="#">Administración</a>
                     </li>
                 <?php endif;?>
             </ul>
