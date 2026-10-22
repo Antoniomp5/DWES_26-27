@@ -35,7 +35,7 @@ $precio = htmlspecialchars($_POST['precio'] ?? '');
 
 // Crear array asociativo con los datos del nuevo libro
 $nuevo_libro = [
-    'id' => null,
+    'id' => $nuevo_libro_id,
     'titulo' => $titulo,
     'autor' => $autor,
     'genero' => $generos,
@@ -43,8 +43,9 @@ $nuevo_libro = [
     'precio' => $precio
 ];
 
-$libros = get_libros();
-$nuevo_libro_id = obtener_id_nuevo_libro($libros);
+// Nuevos elementos en el array de libros
+$libros[]= $nuevo_libro;
+
 
 // vistas
 include "views/view.index.php";

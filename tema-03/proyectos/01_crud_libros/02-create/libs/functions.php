@@ -67,7 +67,7 @@ function get_libros(){
 }
 
 // Función que devuelve el último id
-function obtener_id_nuevo_libro($libros){
+function obtener_id_nuevo_libro($libros = []){
     $ultimo_libro = end($libros);
 
     $ultimo_id = $ultimo_libro['id'];
