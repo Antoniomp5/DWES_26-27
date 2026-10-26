@@ -26,7 +26,7 @@
             <legend>Editar el libro</legend>
             <!-- capa principal de la aplicación -->
             <div class="container mt-3">
-                <form action="update.php" method="post">
+                <form action="update.php?indice=<?= $indice ?>" method="post">
                     <fieldset enabled>
                         <div class="mb-3">
                             <label for="titulo" class="form-label">Título</label>

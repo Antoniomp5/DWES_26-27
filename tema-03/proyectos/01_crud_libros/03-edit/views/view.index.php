@@ -95,7 +95,7 @@
                                 <th scope="row" class="text-end"><?= $libro['id'] ?></th>
                                 <td scope="row"><?= $libro['titulo'] ?></td>
                                 <td scope="row"><?= $libro['autor'] ?></td>
-                                <td scope="row"><?= $libro['genero'] ?></td>
+                                <td><?= $libro['genero'] ?></td>
                                 <td scope="row"><?= $libro['editorial'] ?></td>
                                 <td scope="row" class="text-end"><?= number_format($libro['precio'], 2, ',', '.') ?> €</td>
                                 <!-- botones de acción -->
