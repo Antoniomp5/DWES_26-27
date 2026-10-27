@@ -1,69 +1,58 @@
 <?php
 
-/**
- * libreria : functions.php
- * Funciones auxiliares para el proyecto CRUD de libros
- * 
- * Funciones incluidos:
- *  - get_libros()
- *           - id
- *           - titulo
- *           - autor
- *           - editorial
- *           - generos
- *           - precios
- *            
- */
+/*
+    librería: functions.php
+    Funciones auxiliares para el proyecto CRUD de libros.
 
+    Funciones incluidas:
+        - get_libros(): Devuelve un array con todos los libros creados.
+*/
 
-
-function get_libros(){
-
+// Función get_libros(): Devuelve un array con todos los libros creados.
+function get_libros() {
+    // Array de libros (simulando una base de datos)
     $libros = [
         [
             'id' => 1,
             'titulo' => 'Cien años de soledad',
             'autor' => 'Gabriel García Márquez',
-            'genero' => 'Realismo mágico',
             'editorial' => 'Editorial Sudamericana',
+            'generos' => ['Realismo mágico', 'Novela'],
             'precio' => 19.99
         ],
         [
             'id' => 2,
-            'titulo' => 'Don Quijote de la Mancha',
-            'autor' => 'Miguel de Cervantes',
-            'genero' => 'Novela de aventuras',
-            'editorial' => 'Espasa-Calpe',
-            'precio' => 24.50
+            'titulo' => '1984',
+            'autor' => 'George Orwell',
+            'editorial' => 'Secker & Warburg',
+            'generos' => ['Distopía', 'Ciencia ficción'],
+            'precio' => 14.99
         ],
         [
             'id' => 3,
-            'titulo' => '1984',
-            'autor' => 'George Orwell',
-            'genero' => 'Distopía',
-            'editorial' => 'Debolsillo',
-            'precio' => 12.95
+            'titulo' => 'El gran Gatsby',
+            'autor' => 'F. Scott Fitzgerald',
+            'editorial' => 'Charles Scribner\'s Sons',
+            'generos' => ['Novela', 'Literatura estadounidense'],
+            'precio' => 12.99
         ],
         [
             'id' => 4,
-            'titulo' => 'El principito',
-            'autor' => 'Antoine de Saint-Exupéry',
-            'genero' => 'Literatura infantil / Filosófico',
-            'editorial' => 'Salamandra',
-            'precio' => 9.90
-            
+            'titulo' => 'Don Quijote de la Mancha',
+            'autor' => 'Miguel de Cervantes',
+            'editorial' => 'Francisco de Robles',
+            'generos' => ['Novela', 'Literatura española'],
+            'precio' => 24.99
         ],
         [
             'id' => 5,
-            'titulo' => 'Ficciones',
-            'autor' => 'Jorge Luis Borges',
-            'genero' => 'Antología de cuentos',
-            'editorial' => 'Alianza Editorial',
-            'precio' => 14.25
+            'titulo' => 'El señor de los anillos',
+            'autor' => 'J.R.R. Tolkien',
+            'editorial' => 'Allen & Unwin',
+            'generos' => ['Fantasía', 'Aventura'],
+            'precio' => 29.99
         ]
     ];
 
     return $libros;
 }
-
-

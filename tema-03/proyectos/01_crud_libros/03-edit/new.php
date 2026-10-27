@@ -1,29 +1,34 @@
 <?php
-    /*
-     new.php
-     permite crear nuevos libros
-     @package CRUD Libros
-     @author 
-     @version
 
-     Tabla libros:
-        - id
-        - titulo
-        - autor
-        - editorial
-        - generos
-        - precios
-    
+/**
+ * new.php
+ *
+ * Permite crear nuevo libro.
+ * 
+ *
+ * @package    CRUD Libros
+ * @author     Tu Nombre
+ * @version    1.0
+ * 
+ * Tabla  libros:
+    *  - id (INT, PRIMARY KEY, AUTO_INCREMENT)
+    *  - titulo (VARCHAR(255))
+    *  - autor (VARCHAR(255))
+    *  - editorial (VARCHAR(255))
+    *  - generos 
+    *  - precio 
 
-    */
+*/
 
-// cargar librerias
-
-
-// modelos
-
-//Negocioado
+// Cargar librerias
 
 
-// vistas
-include "views/view.new.php";
+// Models
+
+// Negociado
+
+
+// Views
+include 'views/new.view.php';
+
+

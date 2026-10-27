@@ -1,29 +1,34 @@
 <?php
-    /*
-     index.php
-    
-     @package CRUD Libros
-     @author 
-     @version
 
-     Tabla libros:
-        - id
-        - titulo
-        - autor
-        - editorial
-        - generos
-        - precios
-    
+/**
+ * index.php
+ *
+ * Página principal del proyecto CRUD de libros.
+ * Muestra una lista de libros y permite agregar, editar y eliminar libros.
+ *
+ * @package    CRUD Libros
+ * @author     Tu Nombre
+ * @version    1.0
+ * 
+ * Tabla  libros:
+    *  - id (INT, PRIMARY KEY, AUTO_INCREMENT)
+    *  - titulo (VARCHAR(255))
+    *  - autor (VARCHAR(255))
+    *  - editorial (VARCHAR(255))
+    *  - generos 
+    *  - precio 
 
-    */
+*/
 
-// cargar librerias
-require_once "libs/functions.php";
+// Cargar librerias
+require_once 'libs/functions.php';
 
-// modelos
+// Models
 
-//Negocioado
+// Negociado
 $libros = get_libros();
 
-// vistas
-include "views/view.index.php";
+// Views
+include 'views/index.view.php';
+
+

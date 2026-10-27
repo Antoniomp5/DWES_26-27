@@ -1,53 +1,62 @@
 <?php
-/*
-     create.php
-     Permite crear nuevos libros
-     @package CRUD Libros
-     @author 
-     @version
 
-     Tabla libros:
-        - id
-        - titulo
-        - autor
-        - editorial
-        - generos
-        - precios
-    
+/**
+ * create.php
+ *
+ * permite crear un nuevo libro a partir de los datos enviados desde el formulario.
+ *
+ * @package    CRUD Libros
+ * @author     Tu Nombre
+ * @version    1.0
+ * 
+ * Tabla  libros:
+    *  - id (INT, PRIMARY KEY, AUTO_INCREMENT)
+    *  - titulo (VARCHAR(255))
+    *  - autor (VARCHAR(255))
+    *  - editorial (VARCHAR(255))
+    *  - generos 
+    *  - precio 
 
-    */
+*/
 
-        // cargar librerias
-require_once "libs/functions.php";
+// Cargar librerias
+require_once 'libs/functions.php';
 
-// modelos
+// Models
 
-//Negocioado
-$libros = get_libros();
-//Obtener los datos del formulario
+// Negociado
+
+// Extraer los datos del formulario
 $titulo = htmlspecialchars($_POST['titulo'] ?? '');
 $autor = htmlspecialchars($_POST['autor'] ?? '');
 $editorial = htmlspecialchars($_POST['editorial'] ?? '');
 $generos = htmlspecialchars($_POST['generos'] ?? '');
 $precio = htmlspecialchars($_POST['precio'] ?? '');
 
+// Proceso de validación de los datos del formulario
 
-$nuevo_libro_id = obtener_id_nuevo_libro($libros);
+// Obtener el array de libros existente
+$libros = get_libros();
 
-// Acceso a la validación de los datos 
+// Obtener id del nuevo libro creado
+$new_book_id = obtener_id_nuevo_libro($libros);
 
-// Crear array asociativo con los datos del nuevo libro
-$nuevo_libro = [
-    'id' => $nuevo_libro_id,
+// Crear array asociativo del nuevo libro
+$new_book = [
+    'id' => $new_book_id,
     'titulo' => $titulo,
     'autor' => $autor,
-    'genero' => explode(', ', $generos),
     'editorial' => $editorial,
+    'generos' => explode(', ', $generos),
     'precio' => $precio
 ];
 
-// Nuevos elementos en el array de libros
-$libros[]= $nuevo_libro;
+// Agregar el nuevo libro al array de libros
+$libros[] = $new_book;
 
-// vistas
-include "views/view.index.php";
+
+
+// Views
+include 'views/index.view.php';
+
+

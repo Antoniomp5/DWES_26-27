@@ -1,60 +1,59 @@
- <?php
-/*
-     edit.php
-     Permite editar los libros existentes y creados
-     @package CRUD Libros
-     @author 
-     @version
+<?php
 
-     Tabla libros:
-        - id
-        - titulo
-        - autor
-        - editorial
-        - generos
-        - precios
-    
+/**
+ * update.php
+ *
+ * permite editar un libro existente en la tabla de libros
+ *
+ * @package    CRUD Libros
+ * @author     Tu Nombre
+ * @version    1.0
+ * 
+ * Tabla  libros:
+    *  - id (INT, PRIMARY KEY, AUTO_INCREMENT)
+    *  - titulo (VARCHAR(255))
+    *  - autor (VARCHAR(255))
+    *  - editorial (VARCHAR(255))
+    *  - generos 
+    *  - precio 
 
-    */
+*/
 
-// cargar librerias
-require_once "libs/functions.php";
+// Cargar librerias
+require_once 'libs/functions.php';
 
-// Cargar el array de los libros
-$libros = get_libros();
+// Models
 
-
-// modelos
-
-//Negocioado
-// Obtener el indice desde la url
+// Negociado
+// Obtener el indice del libro a editar desde la URL
+// update.php?indice=0 - edito el  primer libro
 $indice = htmlspecialchars($_GET['indice'] ?? null);
 
-// Crear un array de libros con los datos del formulario
+// Cargar el array de libros
+$libros = get_libros();
+
+// Cargo los datos del formulario
 $titulo = htmlspecialchars($_POST['titulo'] ?? '');
 $autor = htmlspecialchars($_POST['autor'] ?? '');
 $editorial = htmlspecialchars($_POST['editorial'] ?? '');
 $generos = htmlspecialchars($_POST['generos'] ?? '');
 $precio = htmlspecialchars($_POST['precio'] ?? '');
 
-// Edición del libro
-$editar_libro = [
+// Crear array asociativo con los datos del libro editado
+$edit_book = [
     'id' => $libros[$indice]['id'],
     'titulo' => $titulo,
     'autor' => $autor,
-    'genero' => explode(', ', $generos),
     'editorial' => $editorial,
+    'generos' => explode(', ', $generos),
     'precio' => $precio
 ];
 
-//actualizo el array
-$libros[$indice]= $editar_libro;
-//edit.php?indice=0 - edita el primer libro
+// Actualizar el libro en el array de libros
+$libros[$indice] = $edit_book;
 
-// Validar el indice recibido
-
-
+// Cargo la vista de edición con los detalles del libro a editar
+require_once 'views/index.view.php';
 
 
-// vistas
-require_once "views/view.index.php";
+
