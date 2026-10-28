@@ -1,105 +1,96 @@
 <?php
+    /**
+     *     librería: functions.php
+     *      Funciones auxiliares para el proyecto CRUD de libros.
 
-/**
- * libreria : functions.php
- * Funciones auxiliares para el proyecto CRUD de libros
- * 
- * Funciones incluidos:
- *  - get_libros()
- *           -id
- *           -Descripcion
- *           -Modelo
- *           -Categoria (Portátil, PC sobremesa, Componente, Pantalla, Impresora)
- *           -Unidades
- *           -Precio
- */
+     *      Funciones incluidas:
+     *      - get_libros(): Devuelve un array con todos los libros creados.
+    */
 
-
-function get_articulos()
-{
-
+function get_articulos() {
     $articulos = [
         [
-            'id' => 1,
-            'Descripcion' => 'Portátil Asus ROG Zephyrus G14 AMD Ryzen 7 32GB RAM',
-            'Modelo' => 'ROG Zephyrus G14',
-            'Categoria' => 'Portátil',
-            'Unidades' => 15,
-            'Precio' => 1499.99
+            "id" => 1,
+            "descripcion" => "Ordenador portátil",
+            "modelo" => "HP Pavilion 15",
+            "categorias" => "Ordenadores",
+            "unidades" => 10,
+            "precio" => 699.99
         ],
         [
-            'id' => 2,
-            'Descripcion' => 'Teclado Mecánico Inalámbrico Logitech MX Mechanical',
-            'Modelo' => 'MX Mechanical',
-            'Categoria' => 'Componente',
-            'Unidades' => 45,
-            'Precio' => 169.50
+            "id" => 2,
+            "descripcion" => "Teclado mecánico",
+            "modelo" => "Logitech G413",
+            "categorias" => "Periféricos",
+            "unidades" => 15,
+            "precio" => 79.99
         ],
         [
-            'id' => 3,
-            'Descripcion' => 'Procesador AMD Ryzen 7 7800X3D 4.2GHz',
-            'Modelo' => 'Ryzen 7 7800X3D',
-            'Categoria' => 'Componente',
-            'Unidades' => 22,
-            'Precio' => 399.95
+            "id" => 3,
+            "descripcion" => "Ratón inalámbrico",
+            "modelo" => "Logitech M185",
+            "categorias" => "Periféricos",
+            "unidades" => 25,
+            "precio" => 19.99
         ],
         [
-            'id' => 4,
-            'Descripcion' => 'Monitor Gaming Curvo Samsung Odyssey G5 27" QHD',
-            'Modelo' => 'Odyssey G5 27"',
-            'Categoria' => 'Pantalla',
-            'Unidades' => 18,
-            'Precio' => 229.90
+            "id" => 4,
+            "descripcion" => "Monitor de 24 pulgadas",
+            "modelo" => "Samsung Essential",
+            "categorias" => "Monitores",
+            "unidades" => 8,
+            "precio" => 149.99
         ],
         [
-            'id' => 5,
-            'Descripcion' => 'Disco Duro SSD Kingston NV2 2TB PCIe 4.0 NVMe',
-            'Modelo' => 'NV2 2TB',
-            'Categoria' => 'Componente',
-            'Unidades' => 60,
-            'Precio' => 114.25
+            "id" => 5,
+            "descripcion" => "Disco SSD de 1 TB",
+            "modelo" => "Kingston NV2",
+            "categorias" => "Almacenamiento",
+            "unidades" => 20,
+            "precio" => 69.99
         ],
         [
-            'id' => 6,
-            'Descripcion' => 'Tarjeta Gráfica Gigabyte NVIDIA GeForce RTX 4070 Super',
-            'Modelo' => 'RTX 4070 Super Gaming OC',
-            'Categoria' => 'Componente',
-            'Unidades' => 8,
-            'Precio' => 659.00
+            "id" => 6,
+            "descripcion" => "Memoria RAM de 16 GB",
+            "modelo" => "Corsair Vengeance",
+            "categorias" => "Componentes",
+            "unidades" => 12,
+            "precio" => 44.99
         ],
         [
-            'id' => 7,
-            'Descripcion' => 'Ordenador de Sobremesa HP Slim Desktop Intel Core i5 16GB',
-            'Modelo' => 'Slim S01-a0004ns',
-            'Categoria' => 'PC sobremesa',
-            'Unidades' => 12,
-            'Precio' => 549.99
+            "id" => 7,
+            "descripcion" => "Tarjeta gráfica",
+            "modelo" => "NVIDIA GeForce RTX 4060",
+            "categorias" => "Componentes",
+            "unidades" => 5,
+            "precio" => 329.99
         ],
         [
-            'id' => 8,
-            'Descripcion' => 'Impresora Multifunción Inyección de Tinta HP DeskJet 2720e',
-            'Modelo' => 'DeskJet 2720e',
-            'Categoria' => 'Impresora',
-            'Unidades' => 30,
-            'Precio' => 54.90
+            "id" => 8,
+            "descripcion" => "Impresora multifunción",
+            "modelo" => "HP DeskJet 2820e",
+            "categorias" => "Impresoras",
+            "unidades" => 7,
+            "precio" => 59.99
         ],
         [
-            'id' => 9,
-            'Descripcion' => 'Impresora Láser Monocromo Brother con WiFi y Dúplex',
-            'Modelo' => 'HL-L2350DW',
-            'Categoria' => 'Impresora',
-            'Unidades' => 14,
-            'Precio' => 119.00
+            "id" => 9,
+            "descripcion" => "Auriculares inalámbricos",
+            "modelo" => "Sony WH-CH520",
+            "categorias" => "Audio",
+            "unidades" => 14,
+            "precio" => 49.99
         ],
         [
-            'id' => 10,
-            'Descripcion' => 'PC Gaming Preconfigurado MSI Corsair Intel i7 32GB RTX 4060',
-            'Modelo' => 'MAG Infinite S3',
-            'Categoria' => 'PC sobremesa',
-            'Unidades' => 5,
-            'Precio' => 1199.00
+            "id" => 10,
+            "descripcion" => "Webcam Full HD",
+            "modelo" => "Logitech C920",
+            "categorias" => "Periféricos",
+            "unidades" => 9,
+            "precio" => 69.99
         ]
     ];
 
     return $articulos;
 }
+

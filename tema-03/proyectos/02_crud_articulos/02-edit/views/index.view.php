@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Proyecto-3.1 CRUD-libros</title>
+    <title>Proyecto 3.2 - CRUD - Artículos</title>
 
     <!-- css bootstrap básico 6.0 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
@@ -21,13 +21,11 @@
         <!-- cabecera de la aplicación -->
         <header class="bg-primary text-white p-3 mb-3">
             <i class="bi bi-stack"></i>
-            <span class="fs-6">Proyecto 3.1 CRUD-libros</span>
+            <span class="fs-6">CRUD - Artículos</span>
         </header>
-
-        <!-- Menú principal de  la aplicación -->
         <nav class="navbar md:navbar-expand bg-1">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Libros</a>
+                <a class="navbar-brand" href="#">Navbar</a>
                 <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDrawer" aria-controls="navbarDrawer" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon" aria-hidden="true"></span>
                 </button>
@@ -39,10 +37,10 @@
                     <div class="drawer-body mb-2 md:mb-0">
                         <ul class="nav navbar-nav me-auto">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.php">Listado</a>
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="new.php">Nuevo</a>
+                                <a class="nav-link" href="#">Link</a>
                             </li>
                             <li class="nav-item">
                                 <button class="nav-link" type="button" data-bs-toggle="menu" aria-expanded="false">
@@ -62,71 +60,49 @@
                         <form class="hstack gap-2" role="search">
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
                             <button class="btn-solid btn-icon theme-secondary" type="submit">
-                                <svg class="bi" width="16" height="16">
-                                    <use href="#search" />
-                                </svg>
+                                <i class="bi bi-search"></i>
                             </button>
                         </form>
                     </div>
                 </dialog>
             </div>
         </nav>
+        
 
         <!-- contenido principal de la aplicación -->
         <main>
+            <legend>Tabla de artículos</legend>
             <div class="content">
-                <legend>Tabla de libros</legend>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">id</th>
-                            <th scope="col">Título</th>
-                            <th scope="col">Autor</th>
-                            <th scope="col">Género</th>
-                            <th scope="col">Editorial</th>
-                            <th scope="col" class="text-end">Precio</th>
-                            <th scope="col">Acciones</th>
-
+                            <th>ID</th>
+                            <th>Descripcíon</th>
+                            <th>Modelo</th>
+                            <th>Categoría</th>
+                            <th>Unidades</th>
+                            <th>Precio</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($libros as $indice => $libro): ?>
-                            <tr>
-                                <th scope="row" class="text-end"><?= $libro['id'] ?></th>
-                                <td scope="row"><?= $libro['titulo'] ?></td>
-                                <td scope="row"><?= $libro['autor'] ?></td>
-                                <td scope="row"><?= $libro['genero'] ?></td>
-                                <td scope="row"><?= $libro['editorial'] ?></td>
-                                <td scope="row" class="text-end"><?= number_format($libro['precio'], 2, ',', '.') ?> €</td>
-                                <!-- botones de acción -->
-                                <td>
-                                    <!-- botón editar -->
-                                    <a href="edit.php?indice=<?= $indice ?>" class=" btn btn-outline theme-success btn-sm" title="Editar">
-                                        <i class="bi bi-pencil-square"></i>
-                                        <!-- Al controlador le estoy pasadno mediante controlador get el parametro indice, que me va a indicar el indice del
-                                         libro que voy a editar -->
-                                    </a>
-                                    <!-- eliminar -->
-                                    <a href="delete.php" class=" btn btn-outline theme-danger btn-sm" title="Eliminar">
-                                        <i class="bi bi-x-octagon-fill"></i>
-                                    </a>
-                                    <!-- mostrar -->
-                                    <a href="view.php" class=" btn btn-outline theme-info btn-sm" title="Mirar">
-                                        <i class="bi bi-view-list"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                        <?php foreach($articulos as $articulo): ?>
+                        <tr>
+                            <th class="text-end"><?= $articulo['id'] ?></th>
+                            <td><?= $articulo['descripcion'] ?></td>
+                            <td><?= $articulo['modelo'] ?></td>
+                            <td><?= $articulo['categorias'] ?></td>
+                            <td class="text-end"><?= $articulo['unidades'] ?></td>
+                            <td class="text-end"><?= number_format($articulo['precio'], 2, ',', '.') ?> €</td>
+                        </tr>
                         <?php endforeach; ?>
-
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="6" class="text-end">Total</td>
-                            <td class="text-end"><?= count($libros) ?></td>
+                            <td colspan="5" class="text-end">Total</td>
+                            <td class="text-end"><?= count($articulos)  ?></td>
                         </tr>
                     </tfoot>
                 </table>
-
             </div>
 
         </main>

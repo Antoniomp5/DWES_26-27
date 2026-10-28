@@ -1,29 +1,31 @@
 <?php
-    /*
-     index.php
-    
-     @package CRUD Libros
-     @author 
-     @version
-
-     Tabla libros:
-        - id
-        - titulo
-        - autor
-        - editorial
-        - generos
-        - precios
-    
-
+   /**
+    * index.php
+    *
+    * Página principal del proyecto CRUD de artículos.
+    * Muestra una lista de artículos y permite agregar, editar y eliminar libros.
+    *
+    * @package    CRUD Artículos
+    * @author     Antonio Hernández Gilabert
+    * @version    1.0
+    * 
+    * Tabla  libros:
+    *  - id (INT, PRIMARY KEY, AUTO_INCREMENT)
+    *  - titulo (VARCHAR(255))
+    *  - autor (VARCHAR(255))
+    *  - editorial (VARCHAR(255))
+    *  - generos 
+    *  - precio 
     */
 
-// cargar librerias
-require_once "libs/functions.php";
+   // cargar librerias
+   require_once "libs/functions.php";
 
-// modelos
+   // Models
 
-//Negocioado
-$articulos = get_articulos();
+   // Negociado
 
-// vistas
-include "views/view.index.php";
+   $articulos = get_articulos();
+
+   // Vista
+   include "views/index.view.php";
