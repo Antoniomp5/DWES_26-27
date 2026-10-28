@@ -1,7 +1,7 @@
 <?php
     /*
      filter.php
-     permite fitral los libros existentes
+     permite filtrar los datos, mediante una variable
      @package CRUD Libros
      @author 
      @version
@@ -23,19 +23,27 @@ require_once 'libs/functions.php';
 // Models
 
 // Negociado
-// Obtener el promt de busqueda 
-// order.php?prompt=cervantes - extrae todos los libros de cervantes
-$criterio = htmlspecialchars($_GET['prompt'] ?? null);
+// Obtener el criterio de la oredenación
+// filter.php?prompt=cervantes - flitra en nombre de Cervantes
+$prompt = htmlspecialchars($_GET['prompt'] ?? null);
 
 // Validar el índice recibido
 
 // Cargar el array de libros
 $libros = get_libros();
 
-
-
 // Oredenar el array
 $aux = [];
+
+foreach($libros as $libro){
+    if(array_search($prompt, $libro) !== false){
+        $aux[] = $libro;
+
+    }
+
+}
+
+$libros = $aux;
 
 // Cargo la vista de muestra con los detalles del libro a editar
 require_once 'views/index.view.php';
