@@ -1,13 +1,15 @@
 <?php
-    /**
-     *     librería: functions.php
-     *      Funciones auxiliares para el proyecto CRUD de libros.
 
-     *      Funciones incluidas:
-     *      - get_libros(): Devuelve un array con todos los libros creados.
-    */
+/**
+ *     librería: functions.php
+ *      Funciones auxiliares para el proyecto CRUD de libros.
 
-function get_articulos() {
+ *      Funciones incluidas:
+ *      - get_libros(): Devuelve un array con todos los libros creados.
+ */
+
+function get_articulos()
+{
     $articulos = [
         [
             "id" => 1,
@@ -94,3 +96,12 @@ function get_articulos() {
     return $articulos;
 }
 
+function obtener_id_nuevo_articulo($articulos = []){
+    $ulitmo_articulo = end($articulos);
+
+    $ultimo_id = $ulitmo_articulo['id'];
+
+    return $ultimo_id + 1 ;
+
+
+}

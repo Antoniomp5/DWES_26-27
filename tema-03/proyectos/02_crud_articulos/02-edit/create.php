@@ -31,6 +31,19 @@
    $precio = htmlspecialchars($_POST['precio'] ?? '');
 
    $articulos = get_articulos();
+   $nuevoIdArticulo = obtener_id_nuevo_articulo($articulos);
+   
+   $nuevo_articulo = [
+            "id" => $nuevoIdArticulo,
+            "descripcion" => $descripcion,
+            "modelo" => $modelo,
+            "categorias" => $categoria,
+            "unidades" => $unidades,
+            "precio" => $precio
+
+   ];
+
+   $articulos[] = $nuevo_articulo;
 
    // Vista
    include "views/index.view.php";

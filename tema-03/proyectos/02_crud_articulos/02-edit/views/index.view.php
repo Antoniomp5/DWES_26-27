@@ -25,7 +25,7 @@
         </header>
         <nav class="navbar md:navbar-expand bg-1">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="new.php">Nuevo</a>
                 <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDrawer" aria-controls="navbarDrawer" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon" aria-hidden="true"></span>
                 </button>
@@ -92,7 +92,7 @@
                             <td><?= $articulo['modelo'] ?></td>
                             <td><?= $articulo['categorias'] ?></td>
                             <td class="text-end"><?= $articulo['unidades'] ?></td>
-                            <td class="text-end"><?= number_format($articulo['precio'], 2, ',', '.') ?> €</td>
+                            <td class="text-end"><?= number_format((float)$articulo['precio'], 2, ',', '.') ?> €</td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>

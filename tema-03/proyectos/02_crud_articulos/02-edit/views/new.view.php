@@ -28,23 +28,24 @@
             <legend>Nuevo artículo</legend>
             <form action="create.php" method="post">
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="exampleInputEmail1" class="form-label">Descripción</label>
+                    <input type="text" class="form-control" id="titulo" required>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <label for="exampleInputPassword1" class="form-label">Modelo</label>
+                    <input type="text" class="form-control" id="modelo" required>
                 </div>
-                <div>
-                    <label for="exampleCheck1">Check me out</label>
-                    <input type="checkbox" id="exampleCheck1" class="check">
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Categoría</label>
+                    <input type="text" class="form-control" id="categorias" required>
                 </div>
-                <div>
-                    <label for="exampleCheck1">Check me out</label>
-                    <input type="checkbox" id="exampleCheck1" class="check">
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Unidades</label>
+                    <input type="text" class="form-control" id="unidades" required>
                 </div>
-                <div>
-                    <label for="exampleCheck1">Check me out</label>
-                    <input type="checkbox" id="exampleCheck1" class="check">
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Precio</label>
+                    <input type="text" class="form-control" id="precio" required>
                 </div>
                 <a class="btn-solid theme-secondary" href="index.php" role="button">Cancelar</a>
                 <button type="reset" class="btn-solid theme-warning">Borrar</button>
