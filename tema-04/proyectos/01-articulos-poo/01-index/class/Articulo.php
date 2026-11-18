@@ -1,132 +1,187 @@
 <?php
 
-/**
- * @fichero: Articulo.php
- * @Autor: Antonio Hernández Gilabert
- * @fecha:
- * @proyecto0.1
- */
+/*
+    fichero: Articulos.php
+    @autor: Juan Carlos Moreo
+    @fecha: 
+    @proyecto: proyecto41
+*/
 
 /**
  * Clase Articulo
- * @descripción: Clase que representa un articulo con propiedades
- * métodos para mejorar su información.
+ *
+ * @description Clase que representa un artículo con propiedades  métodos para manejar su información. Tiene que cumplir la propiedad de encapsulamiento
  * 
- * @atributos:
- *  - $id: Identificador unico del árticulo
- *  - $descripcion: descripción de cada árticulo
- *  - $modelo: modelo del árticulo
- *  - $marca: marca del árticulo
- *  - $categoria: selecciona las categorias del árticulo
- *  - $unidad: las unidades del árticulo
- *  - $precio: el precio del árticulo
+ * @abributos:
+ *  - $id: Identificador único del artículo.
+ *  - $descripcion: descripción del artículo.
+ *  - $modelo: modelo del artículo
+ *  - $marca: selecciona la marca de una lista
+ *  - $categorias: selecciona las categorias de una lista checbox
+ *  - $unidades: stock en almacén de este artículo
+ *  - $precio: precio del artículo
  * 
  * @métodos:
- *  - cosntructor: párametros opcionales
- *  - getter y setter
+ *  - constructor: parámetros opcionales
+ *  - getters y setters
  */
 
-class Articulo
-{
-    // Atributos
+Class Articulo {
+
     private ?int $id;
-    private ?string $descripcion;
+    private ?string  $descripcion;
     private ?string $modelo;
     private ?string $marca;
-    private ?array $categoria;
-    private ?int $unidad;
+    private ?array $categorias;
+    private ?int $unidades;
     private ?float $precio;
 
-    //Contructor
+    // Método constructor con encapsulamiento
     public function __construct(
         ?int $id = null,
         ?string $descripcion = null,
         ?string $modelo = null,
         ?string $marca = null,
-        array $categoria = [],
-        ?int $unidad = null,
+        ?array $categorias = [],
+        ?int $unidades = null,
         ?float $precio = null
-    )
-    {
+    ) {
         $this->id = $id;
         $this->descripcion = $descripcion;
         $this->modelo = $modelo;
         $this->marca = $marca;
-        $this->categoria = $categoria;
-        $this->unidad = $unidad;
+        $this->categorias = $categorias;
+        $this->unidades = $unidades;
         $this->precio = $precio;
     }
 
-    // Getters y setters
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    public function getId(): int
+    // Getters y Setters
+    /**
+     * Get the value of id
+     */
+    public function getId(): ?int
     {
         return $this->id;
     }
-    public function setDescripcion(string $descripcion): void
+
+    /**
+     * Set the value of id
+     */
+    public function setId(?int $id): self
     {
-        $this->descripcion = $descripcion;
+        $this->id = $id;
+
+        return $this;
     }
 
-    public function getDescripcion(): string
+    /**
+     * Get the value of descripcion
+     */
+    public function getDescripcion(): ?string
     {
         return $this->descripcion;
     }
-    public function setModelo(string $modelo): void
+
+    /**
+     * Set the value of descripcion
+     */
+    public function setDescripcion(?string $descripcion): self
     {
-        $this->modelo = $modelo;
+        $this->descripcion = $descripcion;
+
+        return $this;
     }
 
+    /**
+     * Get the value of modelo
+     */
     public function getModelo(): ?string
     {
         return $this->modelo;
     }
 
-    // Getter y Setter de marca
-    public function setMarca(string $marca): void
+    /**
+     * Set the value of modelo
+     */
+    public function setModelo(?string $modelo): self
     {
-        $this->marca = $marca;
+        $this->modelo = $modelo;
+
+        return $this;
     }
 
+    /**
+     * Get the value of marca
+     */
     public function getMarca(): ?string
     {
         return $this->marca;
     }
 
-    // Getter y Setter de categoria
-    public function setCategoria(array $categoria): void
+    /**
+     * Set the value of marca
+     */
+    public function setMarca(?string $marca): self
     {
-        $this->categoria = $categoria;
+        $this->marca = $marca;
+
+        return $this;
     }
 
-    public function getCategoria(): ?array
+    /**
+     * Get the value of categorias
+     */
+    public function getCategorias(): ?array
     {
-        return $this->categoria;
+        return $this->categorias;
     }
 
-    // Getter y Setter de unidad
-    public function setUnidad(int $unidad): void
+    /**
+     * Set the value of categorias
+     */
+    public function setCategorias(?array $categorias): self
     {
-        $this->unidad = $unidad;
+        $this->categorias = $categorias;
+
+        return $this;
     }
 
-    public function getUnidad(): ?int
+    /**
+     * Get the value of unidades
+     */
+    public function getUnidades(): ?int
     {
-        return $this->unidad;
+        return $this->unidades;
     }
 
-    // Getter y Setter de precio
-    public function setPrecio(float $precio): void
+    /**
+     * Set the value of unidades
+     */
+    public function setUnidades(?int $unidades): self
     {
-        $this->precio = $precio;
+        $this->unidades = $unidades;
+
+        return $this;
     }
 
+    /**
+     * Get the value of precio
+     */
     public function getPrecio(): ?float
     {
         return $this->precio;
     }
+
+    /**
+     * Set the value of precio
+     */
+    public function setPrecio(?float $precio): self
+    {
+        $this->precio = $precio;
+
+        return $this;
+    }
 }
+
+
+

@@ -1,176 +1,187 @@
 <?php
 
-/**
- * @fichero: Tarticulos.php
- * @Autor: Antonio Hernández Gilabert
- * @fecha:
- * @proyecto0.1
- * 
- * @Atrubitos
- *  -Tarticulos = []
- * 
- *  @métodos:
- *  - cosntructor: párametros opcionales
- *  - getter y setter
- *  - getMarcas
- *  - getCategorias
- */
+/*
+    Archivo: Tarticulos.php
+    Descripción: Clase Tarticulos, se trata de un array de  objetos de la clase Articulo.
+    Caracteristicas: POO con encapusulamiento.
+    Atributos:
+        - tarticulos []
+    Métodos: 
+        - constructor
+        - getters
+        - setters
+        - getMarcas()
+        - getCategorias()
 
-// cargar clases
+*/
 
-class Tarticulos
-{
+// Tabla que va a contener una array de objetos de la clase Articulo
+class Tarticulos {
+
     private ?array $tarticulos;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->tarticulos = [];
     }
 
-    public function setTarticulos(array $tarticulos): void
-    {
-        $this->tarticulos = $tarticulos;
-    }
-
+    // Getters y setters
+    /**
+     * Get the value of tarticulos
+     */
     public function getTarticulos(): ?array
     {
         return $this->tarticulos;
     }
 
-    public static function getMarcas(): array
+    /**
+     * Set the value of tarticulos
+     */
+    public function setTarticulos(?array $tarticulos): self
     {
+        $this->tarticulos = $tarticulos;
+
+        return $this;
+    }
+
+    /*
+        Método getMarcas()
+        Descripción: Devuelve un array con todas las marcas de artículos disponibles
+        Con este array tengo que generar el select  dinámico del campo marca.
+        Cuando  estemos trabajando con base  de datos: SELECT id, marca FROM marcas order by id.
+    */
+    static public function getMarcas(): ?array {
         $marcas = [
             'Samsung',
+            'LG',
+            'Sony',
             'Apple',
             'Xiaomi',
-            'Sony',
-            'LG',
-            'Philips',
-            'HP',
-            'Dell',
-            'Lenovo',
-            'Asus'
+            'Huawei',
+            'Motorola',
+            'Nokia',
+            'Oppo'
         ];
 
         return $marcas;
     }
-    public static function getCategorias(): array
-    {
+
+    /*  
+    
+        Método getCategorias()
+        Descripción: Devuelve un array con todos los tipos de categorias disponibles
+        Con este array tengo que generar una lista de checbox dinámico del campo categoria.
+        Cuando  estemos trabajando con base  de datos: SELECT id, categoria FROM categorias order by id.
+    */
+    public static function getCategorias(): ?array {
         $categorias = [
-            'Informática',
-            'Telefonía',
-            'Electrodomésticos',
-            'Imagen y sonido',
-            'Accesorios',
-            'Periféricos',
-            'Fotografía',
-            'Mobiliario',
-            'Iluminación',
-            'Otros'
+            'Electrónica',
+            'Tablet',
+            'Laptop',
+            'Smartwatch',
+            'Television',
+            'Audio',
+            'Cámara',
+            'Accesorios'
         ];
 
         return $categorias;
     }
 
-    /**
-     * Método getArticulos()
-     * Metodo que devuelve todos los articulos
-     */
+    /*
+        Método addArticulos()
+        Descripción: Devuelve un array con todos los artículos disponibles
+    */
+    public function addArticulos() {
 
-    public function addArticulos(): ?array
-    {
-        // Crear artículos
-        $articulo = [];
-
+        // Creaer un objeto de la clase Articulo
         $articulo = new Articulo(
             1,
-            'Smartphone Samsung Galaxy s21',
-            's21',
+            'Smartphone Smasun Galaxy s21',
+            'S21',
             0,
-            [0, 1],
+            [0,2, 3],
             5,
             12.45
         );
-
+ 
         $this->tarticulos[] = $articulo;
 
+        // Añadir más artículos al array
         $articulo = new Articulo(
             2,
-            'Portátil Apple MacBook Air',
-            'MacBook Air M2',
-            1,
-            [2, 3],
+            'Tablet Samsung Galaxy Tab S7',
+            'Tab S7',
+            0,
+            [0, 1, 3],
             10,
-            899.99
-        );
+            15.99
+        );  
 
         $this->tarticulos[] = $articulo;
 
         $articulo = new Articulo(
             3,
-            'Smartphone Xiaomi Redmi Note 13',
-            'Redmi Note 13',
-            2,
-            [0, 1],
-            15,
-            249.99
+            'Laptop LG Gram 17',
+            'Gram 17',
+            1,
+            [0, 2, 4],
+            3,
+            25.99
         );
 
         $this->tarticulos[] = $articulo;
 
         $articulo = new Articulo(
             4,
-            'Televisor Sony Bravia',
-            'Bravia XR',
-            3,
-            [4, 5],
-            8,
-            749.99
+            'Smartwatch Sony Smartwatch 3',
+            'Smartwatch 3',
+            2,
+            [0, 3, 5],
+            7,
+            9.99
         );
 
         $this->tarticulos[] = $articulo;
 
         $articulo = new Articulo(
             5,
-            'Monitor LG UltraWide',
-            'UltraWide 29WQ600',
-            4,
-            [2, 3],
-            12,
-            189.99
+            'Television Apple TV 4K',
+            'TV 4K',
+            3,
+            [0, 4, 6],
+            2,
+            19.99
         );
+
         $this->tarticulos[] = $articulo;
 
         $articulo = new Articulo(
             6,
-            'Auriculares inalámbricos JBL Tune 510BT',
-            'Tune 510BT',
+            'Audio Xiaomi Mi Soundbar',
+            'Mi Soundbar',
+            4,
+            [0, 5, 7],
             8,
-            [4, 5],
-            20,
-            39.99
+            14.99
         );
 
         $this->tarticulos[] = $articulo;
-
-        return $this->tarticulos;
     }
-    /**
-     * Método get_indice_Categorias()
-     * Pasa el indice a nombres
-     */
 
-    public function get_indice_Categorias_a_Nombres(array $categorias): array
-    {
-        $categorias_nombres = [];
-        $categorias_todas = self::getCategorias();
+    /*
+        Método get_indice_categorias_a_nombres()
+        Descripción: Devuelve un array con los nombres de las categorias a partir de los indices
+    */
+    public function get_indice_categorias_a_nombres(array $indices): array {
+        $categorias = self::getCategorias();
+        $nombres = [];
 
-        foreach ($categorias as $indice) {
-            if (isset($categorias_todas[$indice])) {
-                $categorias_nombres[] = $categorias_todas[$indice];
+        foreach ($indices as $indice) {
+            if (isset($categorias[$indice])) {
+                $nombres[] = $categorias[$indice];
             }
         }
 
-        return $categorias_nombres;
+        return $nombres;
     }
 }

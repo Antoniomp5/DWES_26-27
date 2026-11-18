@@ -3,43 +3,42 @@
 /**
  * index.php
  *
- * Página principal del proyecto CRUD de artículos.
- * Muestra una lista de artículos y permite agregar, editar y eliminar libros.
+ * Página principal del proyecto CRUD de artículos. Muestra la tabla de artículos, cada artículo es un ob
  *
  * @package    CRUD Artículos
- * @author     Antonio Hernández Gilabert
+ * @author     Tu Nombre
  * @version    1.0
  *
- * Muestra cada articulo de la tabla articulos 
- *
+ * Tabla artículos:
+ *  - id
+ *  - descripcion
+ *  - modelo
+ *  - marca
+ *  - categorias (array)
+ *  - unidades
+ *  - precio
  */
 
-// cargar clases
+// Cargar clases
 require_once __DIR__ . '/class/Articulo.php';
 require_once __DIR__ . '/class/Tarticulos.php';
 
-// Models
+// Models - no lo necesitamos NO BASE DE DATOS
 
-// Negociado
-// Crear un array de objetos de las clase Atriculo
-
+// 1. Crear un array de objetos de la clase Articulo
 $tabla_articulos = new Tarticulos();
 
-//añadir los articulos
-
+// 2. Añadir artículos al array
 $tabla_articulos->addArticulos();
 
-// obtener el array de articulos
-
+// 3. Obtener el array de artículos
 $articulos = $tabla_articulos->getTarticulos();
 
-//Obtener marcas
+// 4. Obtener el array de marcas - es  metodo estático, no necesitamos crear un objeto de la clase Tarticulos
 $marcas = Tarticulos::getMarcas();
 
-//Obtener categorias
+// 5. Obtener el array de categorías - es  metodo estático, no necesitamos crear un objeto de la clase Tarticulos
 $categorias = Tarticulos::getCategorias();
 
-
-
-// Vista
-include __DIR__ . "/views/index.view.php";
+// Views
+include __DIR__ . '/views/index.view.php';

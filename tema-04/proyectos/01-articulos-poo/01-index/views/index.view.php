@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Proyecto 4.1 - CRUD - Artículos - POO Ecapsulación</title>
+    <title>Proyecto 4.1 - CRUD Artículos - POO Encapsulación</title>
 
-    <!-- css bootstrap básico 6.0 -->
+    <!-- css bootstrap 6.0 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
 
 
-    <!-- icons bootstrap 1.13.1 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+    <!-- icons bootstrap 1.13.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -21,11 +21,13 @@
         <!-- cabecera de la aplicación -->
         <header class="bg-primary text-white p-3 mb-3">
             <i class="bi bi-stack"></i>
-            <span class="fs-6">Proyecto 4.1 - CRUD - Artículos - POO Ecapsulación</span>
+            <span class="fs-6">Proyecto 4.1 - CRUD Artículos - POO Encapsulación</span>
         </header>
+
+        <!-- Menú principal de la aplicación -->
         <nav class="navbar md:navbar-expand bg-1">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="index.php">Artículos</a>
                 <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDrawer" aria-controls="navbarDrawer" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon" aria-hidden="true"></span>
                 </button>
@@ -37,73 +39,48 @@
                     <div class="drawer-body mb-2 md:mb-0">
                         <ul class="nav navbar-nav me-auto">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" type="button" data-bs-toggle="menu" aria-expanded="false">
-                                    Menu
-                                </button>
-                                <div class="menu">
-                                    <a class="menu-item" href="#">Action</a>
-                                    <a class="menu-item" href="#">Another action</a>
-                                    <hr class="menu-divider">
-                                    <a class="menu-item" href="#">Something else here</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                                <a class="nav-link active" aria-current="page" href="index.php">Listado</a>
                             </li>
                         </ul>
-                        <form class="hstack gap-2" role="search">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
-                            <button class="btn-solid btn-icon theme-secondary" type="submit">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </form>
                     </div>
                 </dialog>
             </div>
         </nav>
 
-
         <!-- contenido principal de la aplicación -->
         <main>
-            <legend>Tabla de artículos - POO</legend>
             <div class="content">
+                <legend>Tabla de artículos - POO</legend>
+
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Descripcíon</th>
+                            <th scope="col" class="text-end">Id</th>
+                            <th scope="col">Descripción</th>
                             <th scope="col">Modelo</th>
                             <th scope="col">Marca</th>
-                            <th scope="col">Categoría</th>
-                            <th scope="col">Unidades</th>
-                            <th scope="col">Precio</th>
+                            <th scope="col">Categorías</th>
+                            <th scope="col" class="text-end">Unidades</th>
+                            <th scope="col" class="text-end">Precio</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($articulos as $indice => $articulo): ?>
                             <tr>
-                                <td scope="row" class="text-end"><?= $articulo->getId() ?></td>
-                                <td scope="row"><?= $articulo->getDescripcion() ?></td>
-                                <td scope="row"><?= $articulo->getModelo() ?></td>
-                                <td scope="row"><?= $marcas[$articulo->getMarca()] ?></td>
-                                <td scope="row">
-                                    <?= implode(', ', $tabla_articulos->get_indice_Categorias_a_Nombres($articulo->getCategoria())) ?>
-                                </td>
-                                <td scope="row" class="text-end"><?= $articulo->getUnidad() ?></td>
-                                <td scope="row" class="text-end"><?= number_format($articulo->getPrecio(), 2, ',', '.') ?> €</td>
+                                <th scope="row" class="text-end"><?= $articulo->getId() ?></th>
+                                <td><?= $articulo->getDescripcion() ?></td>
+                                <td><?= $articulo->getModelo() ?></td>
+                                <td><?= $marcas[$articulo->getMarca()] ?></td>
+                                <td><?= implode(', ', $tabla_articulos->get_indice_categorias_a_nombres($articulo->getCategorias())) ?></td>
+                                <td class="text-end"><?= $articulo->getUnidades() ?></td>
+                                <td class="text-end"><?= number_format($articulo->getPrecio(), 2, ',', '.') ?> €</td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                     <tfoot>
                         <tr>
                             <td colspan="6" class="text-end">Total</td>
-                            <td class="text-end"><?= count($articulos)  ?></td>
+                            <td class="text-end"><?= count($articulos) ?></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -115,7 +92,7 @@
         <footer class="footer mt-auto py-3 fixed-bottom bg-light">
             <div class="container">
                 <span class="text-muted">&copy; 2026
-                    Antonio Hernández Gilabert - DWES - 2º DAW - Curso 26/27
+                    Juan Carlos Moreno - DWES - 2º DAW - Curso 26/27
                 </span>
             </div>
         </footer>
